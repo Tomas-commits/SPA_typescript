@@ -39,6 +39,8 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Create 404 page
+        run: cp ./dist/index.html ./dist/404.html
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
@@ -49,5 +51,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-      - name: Create 404 page
-      run: cp ./dist/index.html ./dist/404.html
